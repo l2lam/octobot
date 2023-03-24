@@ -1,0 +1,10 @@
+{
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#0D350E",
+		"titleBar.activeBackground": "#134A14",
+		"titleBar.activeForeground": "#F5FDF5"
+	},
+	"cSpell.words": [
+		"microcontroller"
+	]
+}
