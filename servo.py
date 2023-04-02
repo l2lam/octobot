@@ -1,5 +1,5 @@
 from time import sleep
-from machine import Pin, PWM
+from machine import Pin, PWM, Timer
 
 class Servo:
     """ A simple class for controlling a 9g servo with the Raspberry Pi Pico.
@@ -24,6 +24,20 @@ class Servo:
  
         """
         self.__pwm.deinit()
+
+    def progressToDegrees(self, fromDegrees: int, toDegrees: int, steps: int = 50, pauseMS: int = 15):
+        self.gotoDegrees(fromDegrees)
+        sleep(steps * pauseMS / 1000)
+        for i in range(steps):
+            degrees = int(fromDegrees + (i/steps) * (toDegrees - fromDegrees))
+            self.gotoDegrees(degrees)
+            sleep(pauseMS / 1000)
+ 
+    def returnToNeutralPosition(self, afterMS = 400):
+        sleep(afterMS/1000)
+        self.gotoMiddle()
+        sleep(afterMS/1000)
+        self.stop()
  
     def gotoDegrees(self, degrees: int):
         """ Moves the servo to the specified position in degrees.
@@ -46,3 +60,4 @@ class Servo:
 class Servo9GR(Servo):
     def __init__(self, pin):
         super().__init__(pin, 180, 1000, 9000)
+

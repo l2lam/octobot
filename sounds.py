@@ -1,6 +1,6 @@
 from buzzer import Buzzer
 
-buzzer = Buzzer(16)
+buzzer = Buzzer(17)
 
 def sayChar(char):
     pass

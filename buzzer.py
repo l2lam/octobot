@@ -4,7 +4,7 @@ import time
 class Buzzer:
     """Controlling a buzzer"""
     def __init__(self, pin):
-        self.pwm = PWM(pin)
+        self.pwm = PWM(Pin(pin))
 
 # buzzerPWM = PWM(Pin(0))
 # frequencyADC = ADC(Pin(28))
