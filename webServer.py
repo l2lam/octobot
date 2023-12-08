@@ -12,8 +12,8 @@ print(html);
 page.close()
 
 # Wifi config
-SSID = "Thirdearth guest" #"CYBERTRON"
-WIFI_PW = "vectorsigma" #"Mr.LamYo"
+SSID = ""
+WIFI_PW = ""
 
 # Connect to the wifi and Start the web server
 def startWeb():
